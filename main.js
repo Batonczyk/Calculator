@@ -48,12 +48,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const press = e.key;
     for (let button of keys) {
       const btn = button.dataset.key;
-      if(press === btn){
+      if (press === btn) {
         button.click();
         return
-      }else if(press === 'Enter'){
+      } else if (press === 'Enter') {
         let val = eval(percent(result));
         displayTwo.innerHTML = CleanOutValue(val);
+      } else if (press === 'Delete') {
+        result = '';
+        displayOne.innerHTML = '';
+        displayTwo.innerHTML = '';
       }
     }
   }
